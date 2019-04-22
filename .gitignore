@@ -1,2 +1,10 @@
+.idea/
+LICENSE
+README.md
+TODO
+allure-report/
+allure-results/
+chromedriver
+
 node_modules
 package-lock.json
