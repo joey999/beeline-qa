@@ -17,7 +17,7 @@ module.exports = function describeWithBrowser(name, callback, body) {
     // as we using beforeEach here, new browser will be received for every test case
     beforeEach(async () => {
       browser = new webdriver.Builder()
-          .usingServer('http://127.0.0.1:4444/wd/hub')
+          .usingServer('http://172.18.0.2:4444/wd/hub')
           .withCapabilities({ browserName: 'chrome' })
           .build();
       await browser.get('http://10.50.74.227');
