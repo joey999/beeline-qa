@@ -87,7 +87,9 @@ class Start {
         await this.driver.sleep(10000);
         let elem = await this.driver.findElement(By.xpath("//input[@name='UserName']"));
         console.log("ELEMENT TEXT IS ---- " + await elem.getAttribute('value'));
-        await this.driver.wait(until.elementTextIs(elem, containText), 10000)
+
+        return expect(await elem.getAttribute('value')).to.equal(containText, 'Инпут принял что-то не то!');
+        // await this.driver.wait(until.elementTextIs(await elem.getAttribute('value'), containText), 10000)
             // .then(async (mess) => {
             //     await console.log('=========asdasdasdasd ========== | \n' + mess)
             // });
